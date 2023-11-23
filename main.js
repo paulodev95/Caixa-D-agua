@@ -39,7 +39,7 @@ fetch('http://starts.sytes.net:7890/get_sensor_data')
     var myChart = new Chart(ctx, {
         type: "line", // Tipo de gráfico (bar, line, etc.)
         data: {
-          labels: arrayValue.map(String), // Rótulos do eixo X (ids)
+          labels: arrayValue.map(String).reverse, // Rótulos do eixo X (ids)
           datasets: [
             {
               label: "Values", // Rótulo do conjunto de dados
@@ -55,6 +55,7 @@ fetch('http://starts.sytes.net:7890/get_sensor_data')
             y: {
               beginAtZero: true,
             },
+            reverse: true, // Inverter a ordem do eixo y
           },
         },
       });

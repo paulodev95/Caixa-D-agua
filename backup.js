@@ -20,21 +20,15 @@ function getData() {
   function createLineChart(id, values, data,) {
     const ctx = document.getElementById("lineChart").getContext("2d");
 
+    const chartCanvas = document.getElementById("lineChart");
+    chartCanvas.style.maxWidth = "90%"; // Defina a largura máxima desejada
+    chartCanvas.style.height = "400px"; 
     // Cria o gráfico de linha
     const lineChart = new Chart(ctx, {
       type: "line",
       data: {
         labels: id,
         datasets: [
-          {
-            label: "IDS",
-            data: id,
-            fill: false,
-            backgroundColor: "rgba(75, 192, 192, 0.2)", // Cor de fundo das barras
-            borderColor: "rgba(75, 192, 192, 1)", // Cor da borda das barras
-            borderWidth: 5, // Largura da borda das barras
-           
-          },
           {
             label: "Valores",
             data: values,
@@ -54,6 +48,9 @@ function getData() {
           y: {
             type: "linear",
             position: "left",
+            reverse: true, // Inverter a ordem do eixo y
+            suggestedMin: 200, // Ajustar a leitura a partir de 200
+            suggestedMax: 0, // Definir a leitura máxima como 0
           },
         },
       },
