@@ -51,6 +51,8 @@ function getData() {
             reverse: true, // Inverter a ordem do eixo y
             suggestedMin: 200, // Ajustar a leitura a partir de 200
             suggestedMax: 0, // Definir a leitura máxima como 0
+
+            gu
           },
         },
       },
